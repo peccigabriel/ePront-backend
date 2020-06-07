@@ -17,6 +17,7 @@ routes.get('/medicals', medicalController.index);
 //Criando a rota de insert/select/delete para pacientes
 routes.post('/patients', patientController.create);
 routes.get('/patients', patientController.index);
+routes.get('/patientspat', patientController.indexSpecif);
 
 //Criando rota de insert/select para incidents
 routes.post('/incidents', incidentController.create);

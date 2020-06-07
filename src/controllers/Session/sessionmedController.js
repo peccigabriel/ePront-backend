@@ -4,10 +4,10 @@ module.exports = {
 
   async create(request, response) {
     const { id } = request.body;
-    const idMed = await connection('medicals').where('idMed', id).select('idMed');
-    const medCount = Object.entries(idMed).length;
+    const idMed = await connection('medicals').where('idMed', id).select('nameMed', 'crmMed').first();
+    // const medCount = Object.entries(idMed).length;
 
-    if (medCount === 0) {
+    if (!idMed) {
       return response.status(400).json({ error: 'Médico não encontrado no sistema' });
 
     } else {

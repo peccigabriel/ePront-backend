@@ -2,9 +2,9 @@
 exports.up = function(knex) {
   return knex.schema.createTable('incidents', function (table) {
     table.increments();
-    table.string('dataIncident').notNullable();
     table.string('descIncident').notNullable();
-    table.date('diagIncident').notNullable();
+    table.date('dataIncident').notNullable();
+    table.string('diagIncident').notNullable();
 
     //Coluna que faz referencia ao nome do pacient
     table.string('namePatient').notNullable();

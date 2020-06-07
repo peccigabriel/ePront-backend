@@ -5,9 +5,9 @@ module.exports = {
     const crmMedical = request.headers.authorization;
 
     const incidents = await connection('patients').where('crm_medical', crmMedical).select('*');
-    const contador = Object.entries(incidents).length;
+    // const contador = Object.entries(incidents).length;
 
-    if (contador === 0) {
+    if (!incidents) {
       return response.status(401).json({ error: "Médico não encontrado"});
     }
     return response.json(incidents);
