@@ -1,12 +1,16 @@
-const express = require('express');
+import express, { json } from 'express';
 
-const cors = require ('cors');
+import cors from 'cors';
 
-const routes = require('./routes');
+import routes from './routes';
 const app = express();
 
-app.use(express.json());
+const port = 3333;
+
+app.use(json());
 app.use (cors());
 app.use(routes);
 
-app.listen(3333);
+app.listen(port);
+
+console.log(`server running is ${port}`)
