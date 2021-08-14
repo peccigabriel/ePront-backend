@@ -1,5 +1,4 @@
-
-exports.up = function(knex) {
+export function up(knex) {
   return knex.schema.createTable('incidents', function (table) {
     table.increments();
     table.string('descIncident').notNullable();
@@ -15,9 +14,9 @@ exports.up = function(knex) {
     //foreign keys
     table.foreign('idMedical').references('idMed').inTable('medicals');
     table.foreign('namePatient').references('namePat').inTable('patients');
-  })
-};
+  });
+}
 
-exports.down = function(knex) {
+export function down(knex) {
   return knex.schema.dropTable('incidents');
-};
+}

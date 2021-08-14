@@ -1,9 +1,9 @@
-const knex = require('knex');
+import knex from 'knex';
 
 //Importando as configurações do arquivo knexfile.js
-const configuration = require('../../knexfile');
+import { development } from '../../knexfile';
 
 //Atribuindo as configurações para conexão de desenvolvedor, setadas no arquivo knexfile.js
-const connection = knex(configuration.development);
+const connection = knex(development);
 
-module.exports = connection;
+export default connection;
