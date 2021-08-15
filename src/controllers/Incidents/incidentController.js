@@ -1,5 +1,4 @@
 import connection from '../../database/connection';
-import crypto from 'crypto';
 
 //Logica para criação dos incidents
 export async function create(request, response) {
